@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -28,6 +28,7 @@ public class TurretCombatSystem : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+
 
         if (closest != null && closestDistance <radius)
         {
@@ -63,6 +64,7 @@ public class TurretCombatSystem : MonoBehaviour {
         }
         if (closestDistance < radius)
         {
+            transform.LookAt(closest.transform);
             battleState = 1;
         }
         else
@@ -101,6 +103,8 @@ public class TurretCombatSystem : MonoBehaviour {
                 distance = curDistance;
             }
         }
+
+
         return closest;
     }
 
@@ -111,3 +115,4 @@ public class TurretCombatSystem : MonoBehaviour {
         return curDistance;
     }
 }
+
